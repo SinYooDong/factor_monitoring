@@ -188,9 +188,7 @@ class index extends Component {
                         </Table>
                     </Col>
                     <Col xs="8">
-                        <Card body inverse color="warning">
-                            <CardTitle>수익률</CardTitle>
-                            <Table dark>
+                    <Table dark>
                                 <thead>
                                     <tr>
                                         <th>Date</th>
@@ -260,7 +258,6 @@ class index extends Component {
                                     </tr>
                                 </tbody>
                             </Table>
-                        </Card>
                     </Col>
                 </Row>
                 <br />

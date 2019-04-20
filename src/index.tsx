@@ -8,12 +8,14 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import simulator from "./simulator";
 import portfolio from "./portfolio";
 import Navbar from "./components/Navbar";
+import Index2 from "./index2";
 
 ReactDOM.render(<Router>
     <Navbar />
     <Route path="/" exact component={App} />
     <Route path="/simulator" exact component={simulator} />
     <Route path="/portfolio" exact component={portfolio} />
+    <Route path="/index2" exact component={Index2} />
 </Router>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
