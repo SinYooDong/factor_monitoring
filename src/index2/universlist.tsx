@@ -26,7 +26,7 @@ class universlist extends Component<Props,Stats> {
             <FormGroup row>
                 <Label for="exampleEmail" sm={3}>유니버스 설정</Label>
                 <Col sm={9}>
-                    {(this.state.loading)
+                    {/* {(this.state.loading)
                         ? (
                             this.state.list.map((item:any)=>(
                                 <div key={item.index}>
@@ -39,14 +39,14 @@ class universlist extends Component<Props,Stats> {
                         : (
                             "loading..."
                         )
-                    }
+                    } */}
                     <br />
-                    <Input type="select">
-                        <option value="1">100억 이상</option>
-                        <option value="2">2개</option>
-                        <option value="3">3개</option>
-                        <option value="4">4개</option>
-                        <option value="5">5개</option>
+                    <Input type="select" name={"universe_criteria"}>
+                    <option value="20000000">200억 이상</option>
+                      <option value="10000000">100억 이상</option>
+                      <option value="1000000">10억 이상</option>
+                      <option value="1000000">1억 이상</option>
+                      <option value="500000">5000천만 이상</option>
                     </Input>
                 </Col>
             </FormGroup>

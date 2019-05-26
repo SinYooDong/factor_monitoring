@@ -27,7 +27,7 @@ class App extends Component {
                 <Card body outline color="primary">
                   <CardTitle>유니버스 설정</CardTitle>
                   <CardBody>
-                    <div>
+                    {/* <div>
                       <Label check>
                         <Input type="checkbox" /> KOSPI
                   </Label>
@@ -36,14 +36,14 @@ class App extends Component {
                       <Label check>
                         <Input type="checkbox" /> KOSDAQ
                   </Label>
-                    </div>
+                    </div> */}
                     <br />
-                    <Input type="select">
-                      <option value="1">100억 이상</option>
-                      <option value="2">2개</option>
-                      <option value="3">3개</option>
-                      <option value="4">4개</option>
-                      <option value="5">5개</option>
+                    <Input type="select" name={"universe_criteria"}>
+                      <option value="20000000">200억 이상</option>
+                      <option value="10000000">100억 이상</option>
+                      <option value="1000000">10억 이상</option>
+                      <option value="1000000">1억 이상</option>
+                      <option value="500000">5000천만 이상</option>
                     </Input>
                   </CardBody>
                 </Card>
@@ -52,7 +52,7 @@ class App extends Component {
                 <Card body outline color="primary" style={{ height: "100%" }}>
                   <CardTitle>투자포트폴리오 종목 개수</CardTitle>
                   <CardBody>
-                    <Input type="select">
+                    <Input type="select" name={"portfolio_cnt"}>
                       <option value="1">1개</option>
                       <option value="2">2개</option>
                       <option value="3">3개</option>
@@ -65,7 +65,7 @@ class App extends Component {
             </Row>
             <br />
             <Row>
-              <Col xs="4">
+              {/* <Col xs="4">
                 <Card body outline color="primary">
                   <CardTitle>Rebalancing 주기</CardTitle>
                   <CardBody>
@@ -77,7 +77,7 @@ class App extends Component {
                     </Input>
                   </CardBody>
                 </Card>
-              </Col>
+              </Col> */}
               <Col>
                 <Card body outline color="primary">
                   <CardTitle>시뮬레이션 기간</CardTitle>
@@ -86,9 +86,9 @@ class App extends Component {
                       <Col xs="5">
                         <Input
                           type="date"
-                          name="date"
+                          name="start_date"
                           id="exampleDate"
-                          placeholder="date placeholder"
+                          placeholder="시뮬레이션 시작 기간"
                         />
                       </Col>
                       <Col xs="2">
@@ -97,9 +97,9 @@ class App extends Component {
                       <Col xs="5">
                         <Input
                           type="date"
-                          name="date"
+                          name="end_date"
                           id="exampleDate"
-                          placeholder="date placeholder"
+                          placeholder="시뮬레이션 종료 기간"
                         />
                       </Col>
                     </Row>

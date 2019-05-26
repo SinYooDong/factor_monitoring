@@ -13,7 +13,8 @@ interface Stats {
 class factor_list extends Component<Props, Stats> {
 
     factor_texts:Array<String> = [
-        "Value","Momenturm","Quality","Price","Sentiment"
+        // "Value","Momenturm","Quality","Price","Sentiment"
+        "Value"
     ]
     constructor(props:any){
         super(props);
@@ -39,7 +40,7 @@ class factor_list extends Component<Props, Stats> {
                         <Col sm={9}>
                             {factors.map((factor:any)=>(
                                 <Col sm={4} key={factor.text}>
-                                    <CustomInput type="checkbox" id={factor._id} label={factor.text} />
+                                    <CustomInput type="checkbox" value={factor.index} name={"factors"} id={factor._id} label={factor.text} />
                                 </Col>
                             ))}
                             {/* <Row>

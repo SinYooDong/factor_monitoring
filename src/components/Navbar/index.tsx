@@ -42,7 +42,7 @@ class index extends Component<Props, State> {
                 <Navbar color="faded" warning expand="md" style={{ "backgroundColor": "black" }}>
                     <NavbarBrand href="/" style={{ "color": "white" }}>Factor시뮬레이터</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
-                    <Collapse isOpen={this.state.isOpen} navbar>
+                    {/* <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
                                 <NavLink href="/components/" style={{"color":"white"}}>Components</NavLink>
@@ -68,7 +68,7 @@ class index extends Component<Props, State> {
                                 </DropdownMenu>
                             </UncontrolledDropdown>
                         </Nav>
-                    </Collapse>
+                    </Collapse> */}
                 </Navbar>
             </div>
         );

@@ -5,17 +5,17 @@ const HOST = "http://localhost:5000"
 const requestSimulation = (universe:Array<Number>,universe_criteria:Number,portfolio_cnt:Number,
     rebalancing_term:Number,start_date:Number,end_date:Number,factors:Array<Number>)=>{
 
-    var formData = new FormData();
-    formData.append("universe",universe.toString());
-    formData.append("universe_criteria", universe_criteria.toString());
-    formData.append("portfolio_cnt", portfolio_cnt.toString());
-    formData.append("rebalancing_term", rebalancing_term.toString());
-    formData.append("start_date", start_date.toString());
-    formData.append("end_date", end_date.toString());
-    formData.append("factors", factors.toString());
+        let requestBody = {
+            universe_criteria : universe_criteria,
+            portfolio_cnt : portfolio_cnt,
+            rebalancing_term : rebalancing_term,
+            start_date : start_date,
+            end_date : end_date,
+            factors : factors
+        }
 
     return new Promise((resolve, reject) => {
-        axios.post(HOST + '/v1/factor', formData)
+        axios.post(HOST + '/v1/simulation', requestBody)
             .then((res:any) => {
                 resolve(res.data);
             })
