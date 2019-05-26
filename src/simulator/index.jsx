@@ -12,28 +12,28 @@ import { ScaleLoader } from 'react-spinners';
 import { css } from '@emotion/core';
 
 
-interface Props {
-    children: any,
-    history: any
-}
+// interface Props {
+//     children: any,
+//     history: any
+// }
 
-interface State {
-    loading: boolean
-}
+// interface State {
+//     loading: boolean
+// }
 
-class index extends Component<Props, State> {
+class index extends Component {
 
-    params: any = null;
+    params = null;
 
-    constructor(props: any) {
+    constructor(props) {
         super(props);
         this.state = {
             loading: true
         }
-        let parsed: any = queryString.parse(this.props.history.location.search);
+        let parsed = queryString.parse(this.props.history.location.search);
         parsed.universe_criteria = Number(parsed.universe_criteria);
         parsed.portfolio_cnt = Number(parsed.portfolio_cnt);
-        parsed.factors.forEach((item: any, index: number) => {
+        parsed.factors.forEach((item, index) => {
 
             parsed.factors[index] = Number(item);
         })
@@ -41,8 +41,8 @@ class index extends Component<Props, State> {
         parsed.end_date = moment(parsed.end_date).unix();
         this.params = parsed;
 
-        requestSimulation([], this.params.universe_criteria, this.params.portfolio_cnt, 0, this.params.start_date, this.params.end_date, this.params.factors).then((list: any) => {
-            this.data = list.map((item: any) => {
+        requestSimulation([], this.params.universe_criteria, this.params.portfolio_cnt, 0, this.params.start_date, this.params.end_date, this.params.factors).then((list) => {
+            this.data = list.map((item) => {
                 let name = moment(item.time * 1000).format("YYYY-MM-DD");
                 return {
                     name: name, uv: item.sum_rate_of_return, pv: item.sum_rate_of_return, amt: item.sum_rate_of_return,
@@ -113,7 +113,7 @@ class index extends Component<Props, State> {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {this.data.map((item: any) => {
+                                            {this.data.map((item) => {
                                                 return (
                                                     <tr>
                                                         <th scope="row">{item.name}</th>

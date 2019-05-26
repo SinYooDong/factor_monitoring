@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const HOST = "http://localhost:5000"
+const HOST = "http://15.164.34.97:5000"
 
 const requestSimulation = (universe:Array<Number>,universe_criteria:Number,portfolio_cnt:Number,
     rebalancing_term:Number,start_date:Number,end_date:Number,factors:Array<Number>)=>{
