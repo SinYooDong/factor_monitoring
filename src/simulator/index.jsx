@@ -33,6 +33,12 @@ class index extends Component {
         let parsed = queryString.parse(this.props.history.location.search);
         parsed.universe_criteria = Number(parsed.universe_criteria);
         parsed.portfolio_cnt = Number(parsed.portfolio_cnt);
+        
+        if(parsed.factors == undefined){
+            parsed.factors = [];
+        }else if(typeof(parsed.factors) == "string"){
+            parsed.factors = [parsed.factors]
+        }
         parsed.factors.forEach((item, index) => {
 
             parsed.factors[index] = Number(item);

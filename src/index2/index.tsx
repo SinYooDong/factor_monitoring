@@ -13,38 +13,29 @@ class index extends Component {
         super(props);
     }
 
-    // onSubmitEvent = (e:any)=>{
-    //     e.preventDefault();
+    onSubmitEvent = (e:any)=>{
         
-    //     let universe_criteria = e.target.elements.universe_criteria.value;
-    //     let portfolio_cnt = e.target.elements.portfolio_cnt.value;
-    //     let start_date = e.target.elements.start_date.value;
-    //     let end_date = e.target.elements.end_date.value;
-    //     let factors = [];
+        let factors :any = [];
+        let factorCheckboxs = document.getElementsByName("factors");
 
-    //     let factorCheckboxs = document.getElementsByName("factors");
+        factorCheckboxs.forEach((box:any)=>{
+            if(box.checked){
+                factors.push(box.value);
+            }
+        })
 
-    //     factorCheckboxs.forEach((box:any)=>{
-    //         if(box.checked){
-    //             factors.push(box.value);
-    //         }
-    //     })
-
-    //     console.log("universe_criteria ", universe_criteria);
-    //     console.log("portfolio_cnt ", portfolio_cnt);
-    //     console.log("start_date ", start_date);
-    //     console.log("end_date ", end_date);
-    //     console.log("factors", factors);
-    //     //history.
-    //     this.props.history.push("/simulator");
-    //     ///history.push("/simulator");
-    // }
+        if(factors.length == 0){
+            alert("한개 이상의 팩터를 선택해주세요.")
+            e.preventDefault();
+            return;
+        }
+    }
 
     render() {
         return (
             <Container>
                 <Row>
-                    <Form action={"/simulator"} method={"get"} style={{ width: "100%" }}>
+                    <Form action={"/simulator"} onSubmit={this.onSubmitEvent} method={"get"} style={{ width: "100%" }}>
                         <h1><Badge color="secondary">Multi-factors</Badge></h1>
                         <p>Build, Code, and Trade Your inverstment ideas. Factor에 대한 자세한 설명은 Factor 설명을 참고해 주세요.</p>
                         <h1><Badge color="secondary">Preset</Badge></h1>
