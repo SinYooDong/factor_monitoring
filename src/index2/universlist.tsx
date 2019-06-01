@@ -42,11 +42,11 @@ class universlist extends Component<Props,Stats> {
                     } */}
                     <br />
                     <Input type="select" name={"universe_criteria"}>
-                    <option value="20000000">200억 이상</option>
-                      <option value="10000000">100억 이상</option>
-                      <option value="1000000">10억 이상</option>
-                      <option value="1000000">1억 이상</option>
-                      <option value="500000">5000천만 이상</option>
+                    <option value="100000">1천억 이상</option>
+                      <option value="300000">3천억 이상</option>
+                      <option value="500000">5천억 이상</option>
+                      <option value="1000000">1조 이상</option>
+                      {/* <option value="500000">5000천만 이상</option> */}
                     </Input>
                 </Col>
             </FormGroup>
